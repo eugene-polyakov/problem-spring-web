@@ -7,8 +7,6 @@ on:
   push:
     branches:
     - main
-  schedule:
-  - cron: "0 6 * * *"
 
 env:
   # https://github.com/actions/virtual-environments/issues/1499#issuecomment-689467080
@@ -36,6 +34,5 @@ jobs:
       run: ./mvnw clean test-compile -B
     - name: Test
       run: ./mvnw verify -B
-    - name: Coverage
-      if: github.event_name != 'pull_request'
-      run: ./mvnw coveralls:report -B -D repoToken=${{ secrets.COVERALLS_TOKEN }}
+    - name: Deploy
+      run: ./mvnw deploy -B
