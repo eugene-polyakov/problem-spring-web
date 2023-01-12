@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.zalando</groupId>
     <artifactId>problem-spring-parent</artifactId>
-    <version>0.28.0-SNAPSHOT</version>
+    <version>0.28.0-spring6</version>
     <packaging>pom</packaging>
     <url>https://github.com/zalando/problem-spring-web</url>
     <organization>
@@ -453,13 +453,10 @@
         </plugins>
     </build>
     <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
         <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/eugene-polyakov/problem-spring-web</url>
         </repository>
     </distributionManagement>
     <profiles>
